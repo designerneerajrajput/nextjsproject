@@ -239,8 +239,11 @@ section.Video-Wrapper {
   display: block;
 }
 .hero-content h1 {
-    line-height: 106px;
-    font-size: 110px !important;
+    /* line-height: 106px; */
+    /* font-size: 110px !important; */
+    font-size: 107px;
+    line-height: 95px;
+    font-weight: 300 !important;
 }.Video-Wrapper video {
   max-width: 100%;
   position: sticky;

@@ -223,14 +223,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className='whats-new-wrapper'>
-        <div className='container'>
-          <div className='title-wrap'>
-     <h2 className='title'>What&apos;s New</h2>
-          </div>
-        </div>
-
-      </section>
+     
     </main>
   );
 }
