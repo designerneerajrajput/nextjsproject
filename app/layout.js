@@ -12,8 +12,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Humaan Clone - Digital Agency</title>
-        <meta name="description" content="A modern digital agency website" />
+        <title>Plumbing Website</title>
+        <meta name="description" content="A modern Plumbing Website" />
       
       </head>
       <body suppressHydrationWarning>
