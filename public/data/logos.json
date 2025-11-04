@@ -3,5 +3,20 @@
   { "id": 2, "src": "/images/logo2.png", "alt": "Logo 2" },
   { "id": 3, "src": "/images/logo3.png", "alt": "Logo 3" },
   { "id": 4, "src": "/images/logo4.png", "alt": "Logo 4" },
-  { "id": 5, "src": "/images/logo5.png", "alt": "Logo 5" }
+  { "id": 5, "src": "/images/logo5.png", "alt": "Logo 5" },
+    { "id": 6, "src": "/images/logo1.png", "alt": "Logo 1" },
+  { "id": 7, "src": "/images/logo2.png", "alt": "Logo 2" },
+  { "id": 8, "src": "/images/logo3.png", "alt": "Logo 3" },
+  { "id": 9, "src": "/images/logo4.png", "alt": "Logo 4" },
+  { "id": 10, "src": "/images/logo5.png", "alt": "Logo 5" },
+    { "id": 11, "src": "/images/logo1.png", "alt": "Logo 1" },
+  { "id": 12, "src": "/images/logo2.png", "alt": "Logo 2" },
+  { "id": 13, "src": "/images/logo3.png", "alt": "Logo 3" },
+  { "id": 14, "src": "/images/logo4.png", "alt": "Logo 4" },
+  { "id": 15, "src": "/images/logo5.png", "alt": "Logo 5" },
+    { "id": 16, "src": "/images/logo1.png", "alt": "Logo 1" },
+  { "id": 17, "src": "/images/logo2.png", "alt": "Logo 2" },
+  { "id": 18, "src": "/images/logo3.png", "alt": "Logo 3" },
+  { "id": 19, "src": "/images/logo4.png", "alt": "Logo 4" },
+  { "id": 20, "src": "/images/logo5.png", "alt": "Logo 5" }
 ]

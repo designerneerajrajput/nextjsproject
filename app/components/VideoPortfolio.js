@@ -2,10 +2,14 @@
 
 import { useRef, useEffect, useState } from 'react';
 import gsap from 'gsap';
+
+import LogoColumn from '../components/VerticalLogoSlider';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Image from 'next/image';
 
 export default function VideoSection() {
+
+  
   const videoRef1 = useRef(null);
   const videoRef2 = useRef(null);
   const sectionRef = useRef(null);
@@ -14,8 +18,8 @@ export default function VideoSection() {
   const sectionRef3 = useRef(null);
   const videoRef4 = useRef(null);
   const sectionRef4 = useRef(null);
+const [logos, setLogos] = useState([]);
 
-  const [logos, setLogos] = useState([]);
 
   useEffect(() => {
     if (typeof window === 'undefined') return;
@@ -35,7 +39,7 @@ export default function VideoSection() {
       video1.playsInline = true;
       video1.preload = 'auto';
       video1.pause();
-      gsap.set(video1, { scale: 0.8, transformOrigin: 'center center' });
+      gsap.set(video1, { scale: 0.7, transformOrigin: 'center center' });
 
       const ensurePlay = () => {
         const playPromise = video1.play();
@@ -80,13 +84,13 @@ export default function VideoSection() {
         start: 'top 10%',
         end: 'bottom 30%',
         onEnter: () =>
-          gsap.to(document.body, {
+          gsap.to(document.querySelector('.main-wrapper'), {
             backgroundColor: '#b488f1',
             duration: 0.8,
             ease: 'power2.out',
           }),
         onLeaveBack: () =>
-          gsap.to(document.body, {
+          gsap.to(document.querySelector('.main-wrapper'), {
             backgroundColor: '#f3f3e9',
             duration: 0.8,
             ease: 'power2.out',
@@ -135,13 +139,13 @@ export default function VideoSection() {
         start: 'top 10%',
         end: 'bottom 90%',
         onEnter: () =>
-          gsap.to(document.body, {
+          gsap.to(document.querySelector('.main-wrapper'), {
             backgroundColor: '#f3f3e9',
             duration: 1,
             ease: 'power2.inOut',
           }),
         onLeaveBack: () =>
-          gsap.to(document.body, {
+          gsap.to(document.querySelector('.main-wrapper'), {
             backgroundColor: '#b488f1',
             duration: 1,
             ease: 'power2.inOut',
@@ -214,6 +218,67 @@ export default function VideoSection() {
       );
     });
 
+
+
+
+ const image = document.querySelector('.scroll-image-one');
+
+    gsap.fromTo(
+      image,
+      { y: '-10%' },
+      {
+        y: '10%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-image-section-one',
+          start: 'top bottom',     // when section enters viewport
+          end: 'bottom top',       // until it leaves
+          scrub: true,             // smooth scroll sync
+        },
+      }
+    );
+
+ const imagetwo = document.querySelector('.scroll-image-two');
+
+    gsap.fromTo(
+      imagetwo,
+      { y: '-10%' },
+      {
+        y: '10%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-image-section-two',
+          start: 'top bottom',     // when section enters viewport
+          end: 'bottom top',       // until it leaves
+          scrub: true,             // smooth scroll sync
+        },
+      }
+    );
+
+    const imagethree = document.querySelector('.scroll-image-three');
+
+    gsap.fromTo(
+      imagethree ,
+      { y: '-10%' },
+      {
+        y: '10%',
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.scroll-image-section-three',
+          start: 'top bottom',     // when section enters viewport
+          end: 'bottom top',       // until it leaves
+          scrub: true,             // smooth scroll sync
+        },
+      }
+    );
+
+
+    fetch('/data/logos.json')
+      .then(res => res.json())
+      .then(data => setLogos(data))
+      .catch(err => console.error('Error loading logos:', err));
+
+
     // ✅ Refresh triggers
     setTimeout(() => ScrollTrigger.refresh(), 800);
 
@@ -223,12 +288,7 @@ export default function VideoSection() {
   /* -------------------------------------------------
      🧩 Load Logos
   -------------------------------------------------- */
-  useEffect(() => {
-    fetch('/data/logos.json')
-      .then(res => res.json())
-      .then(data => setLogos(data))
-      .catch(err => console.error('Error loading logos:', err));
-  }, []);
+
 
   return (
     <>
@@ -247,6 +307,8 @@ export default function VideoSection() {
       </section>
 
       {/* 💠 Logo Section */}
+
+      
       <section className="we-repair-wrapper">
         <div className="container text-center">
           <h2 className="title">
@@ -254,41 +316,32 @@ export default function VideoSection() {
             world-class digital products <br />
             for forward-thinking brands.
           </h2>
-
-          <div className="logo-wrapper">
-            {logos.length > 0 && (
-              <ul className="flex flex-wrap justify-center gap-6">
-                {logos.map(logo => (
-                  <li key={logo.id}>
-                    <Image
-                      src={logo.src}
-                      alt={logo.alt}
-                      width={120}
-                      height={120}
-                      className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
-                    />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
+ <div className="logos-list">
+      <LogoColumn logos={logos} delay={0} />
+      <LogoColumn logos={logos} delay={300} />
+      <LogoColumn logos={logos} delay={600} />
+      <LogoColumn logos={logos} delay={900} />
+      <LogoColumn logos={logos} delay={1200} />
+    </div>
+         
         </div>
       </section>
 
       {/* 🎞️ Second Video Section */}
-      <section className="video-wrapper2-two">
+      <section className="video-wrapper2-two ">
         <div className="container">
-          <div className="video-background-img relative">
+          <div className="video-background-img relative scroll-image-section-one">
             <Image
               src="/images/video-bg-img.jpeg"
               alt="Background Image"
               width={1920}
               height={1080}
+              className='scroll-image-one'
             />
-            <div className="video-title-wrap">
+           
+          </div> <div className="video-title-wrap">
               <div className="video-title">PIQUE</div>
             </div>
-          </div>
           <video
             ref={videoRef2}
             className="video-over-on-bg-img"
@@ -301,7 +354,7 @@ export default function VideoSection() {
       </section>
 
       {/* 🟣 Word Cards Sections */}
-      <section className="word-cards-wrapper" ref={sectionRef3}>
+      <section className="word-cards-wrapper " ref={sectionRef3}>
         <div className="container">
           <div className="row">
             <div className="col-md-6">
@@ -320,11 +373,12 @@ export default function VideoSection() {
               </div>
             </div>
             <div className="col-md-6">
-              <div className="work-card-wrap work-card-wrap2">
+              <div className="work-card-wrap work-card-wrap2 ">
                 <div className="title-wrap">
                   <div className="title">Chaleit</div>
                 </div>
-                <Image src="/images/pic.jpeg" alt="" width={1920} height={1080} className="pic-back" />
+                <div className='scroll-image-section-two'>
+                <Image src="/images/pic.jpeg" alt="" width={1920} height={1080} className="pic-back scroll-image-two" /></div>
                 <Image src="/images/pic-small.jpeg" alt="" width={1920} height={1080} className="pic-front" />
               </div>
             </div>
@@ -336,13 +390,13 @@ export default function VideoSection() {
         <div className="container">
           <div className="row">
             <div className="col-md-12">
-              <div className="work-card-wrap work-card-wrap2">
+              <div className="work-card-wrap work-card-wrap2 scroll-image-section-three">
                 <div className="title-wrap">
                   <div className="title">Chaleit</div>
                 </div>
                 <video
                   ref={videoRef4}
-                  className="video-over-on-bg-img"
+                  className="video-over-on-bg-img scroll-image-three"
                   src="/videos/video4.mp4"
                   muted
                   playsInline

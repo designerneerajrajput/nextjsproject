@@ -7,7 +7,10 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import Header from './components/Header';
 import Hero from './components/Hero';
 
+
 import VideoSection from './components/VideoPortfolio';
+import WhatsNewFeed from './components/WhatsNewFeed';
+import Footer from './components/Footer';
 import Image from 'next/image';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -131,6 +134,8 @@ export default function Home() {
 
   return (
     <main>
+     
+      <div className='main-wrapper'>
       <Header />
       <Hero />
       <VideoSection />
@@ -222,8 +227,11 @@ export default function Home() {
           </div>
         </div>
       </section>
+  <WhatsNewFeed />
 
-     
+ 
+
+     </div> <Footer/>
     </main>
   );
 }

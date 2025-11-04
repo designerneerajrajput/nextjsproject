@@ -15,7 +15,7 @@ export default function Hero() {
         <div className="row align-items-center ">
           <div className="col-lg-12 hero-content">
             <h1 className="display-1 fw-bold mb-4">
-         Your Trusted <br></br>Local Plumbing Experts.
+       Extraordinary <br></br>Digital Experiences
             </h1>
             <p className="lead mb-5 fs-4">
              A trusted plumbing service dedicated to delivering reliable repairs and lasting solutions for your home and business

@@ -33,7 +33,7 @@ export default function Header() {
           <div className="nav-content">
             {/* Logo */}
             <Link href="/" className="navbar-brand">
-              <span className="logo-text">HUMAAN</span>
+              <span className="logo-text">PLUMBING</span>
             </Link>
 
             {/* Desktop Menu */}
