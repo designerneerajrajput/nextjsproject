@@ -633,12 +633,12 @@ section.feed-wrapper h2#feed-heading {
 }
 
 footer .footer-canvas {
-    cursor: grab;
+   cursor: grab;
+    opacity: 1;
     width: 50%;
     height: 400px;
     position: absolute;
     inset: 0 0 0 auto;
-    opacity: .3;
 }
 
 footer .footer-canvas:active {
