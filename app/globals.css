@@ -624,33 +624,45 @@ section.feed-wrapper h2#feed-heading {
 
 /* Footer start */
 .footer-container {
-    background: #fff;
-    max-height: 100svh;
-    position: relative;
-    overflow: hidden;
-    margin-top: -340px;
+    background:#fff;
+    position:relative;
+    margin-top:-260px;
+    overflow:visible !important;
+}
+
+/* Canvas */
+.footer-canvas {
+    cursor:grab;
+    opacity:1;
+    width:100%;
+    height:820px;
+    position:absolute;
+    top:-350px; 
+    left:0;
+    z-index: 0;  /* behind footer content */
+    pointer-events: auto; /* allow mouse interactions */
    
 }
 
-footer .footer-canvas {
-   cursor: grab;
-    opacity: 1;
-    width: 50%;
-    height: 400px;
-    position: absolute;
-    inset: 0 0 0 auto;
+.footer-canvas:active {
+    cursor:grabbing;
 }
 
-footer .footer-canvas:active {
-  cursor: grabbing;
-}
-
+/* Footer content stays above */
 footer .footer-content {
-  position: relative;
-  z-index: 10;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 4rem 1rem;
+    position:relative; overflow:visible !important;-webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+   z-index: 1;
+    max-width:1200px;
+    margin:0 auto;
+    padding:4rem 1rem; z-index: 5 !important;
+    pointer-events: none; /* to stop footer selection on drag */
+   
+}.footer-content a,
+.footer-content button,
+.footer-content input {
+    pointer-events: auto; /* so links still work */
 }
 
 footer .footer-grid {
