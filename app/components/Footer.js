@@ -89,16 +89,16 @@ const InteractiveFooter = () => {
  
       // Shape configs with GSAP properties
       const shapeConfigs = [
-        { type: 'icon-1', image: '/images/icon/a.svg' },
-        { type: 'icon-2', image: '/images/icon/b.svg' },
-        { type: 'icon-3', image: '/images/icon/c-1.svg' },
-        { type: 'icon-4', image: '/images/icon/c.svg' },
-        { type: 'icon-5', image: '/images/icon/d.svg' },
-        { type: 'icon-6', image: '/images/icon/f.svg' },
-        { type: 'icon-7', image: '/images/icon/g.svg' },
-        { type: 'icon-8', image: '/images/icon/h.svg' },
-        { type: 'icon-9', image: '/images/icon/i.svg' },
-        { type: 'icon-10', image: '/images/icon/k.svg' }
+        { type: 'icon-1', image: '/images/a.svg' },
+        { type: 'icon-2', image: '/images/b.svg' },
+        { type: 'icon-3', image: '/images/c-1.svg' },
+        { type: 'icon-4', image: '/images/c.svg' },
+        { type: 'icon-5', image: '/images/d.svg' },
+        { type: 'icon-6', image: '/images/f.svg' },
+        { type: 'icon-7', image: '/images/g.svg' },
+        { type: 'icon-8', image: '/images/h.svg' },
+        { type: 'icon-9', image: '/images/i.svg' },
+        { type: 'icon-10', image: '/images/k.svg' }
       ];
  
       function createShapeBody(x, y, config) {
